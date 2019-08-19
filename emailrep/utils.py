@@ -4,7 +4,7 @@ import argparse
 from argparse import Namespace
 from configparser import ConfigParser
 
-from emailrep.api import EmailRep
+from emailrep import EmailRep
 
 CONF_PATH = os.path.expanduser("~/.config/sublime")
 CONF_FILE = os.path.join(CONF_PATH, "setup.cfg")

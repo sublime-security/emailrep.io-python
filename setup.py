@@ -10,7 +10,7 @@ install_requires = [
 
 setuptools.setup(
     name="emailrep",
-    version="0.0.1",
+    version="0.0.2",
     author="Sublime Security",
     author_email="hi@sublimesecurity.com",
     description="Python interface for the EmailRep API",
@@ -24,6 +24,10 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Natural Language :: English",
+        "Intended Audience :: Developers",
     ],
     entry_points={"console_scripts": ["emailrep = emailrep.cli:main"]},
+    keywords=["security", "phishing", "analysts", "soc", "threat intelligence"],
+    license="MIT",
 )

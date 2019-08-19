@@ -1,6 +1,8 @@
+import sys
+from dateutil import parser
+
 from emailrep.utils import parse_args, setup, load_config
-from emailrep.api import EmailRep
-from emailrep.exceptions import RequestException
+from emailrep import EmailRep
 
 def main():
     action, args = parse_args()
@@ -9,11 +11,35 @@ def main():
     emailrep = EmailRep(config.get('emailrep', 'key'))
     try:
         if action == EmailRep.QUERY:
-            emailrep.query(args.query)
-        elif action == EmailRep.REPORT:
-            emailrep.report(args.report, args.tags, args.description, args.timestamp, args.expires)
+            result = emailrep.query(args.query)
 
-    except RequestException as e:
+            if result.get("status") and result["status"] == "fail":
+                print("Failed: %s" % result["reason"])
+                sys.exit()
+
+            emailrep.format_query_output(result)
+
+        elif action == EmailRep.REPORT:
+            email = args.report
+            tags = args.tags.split(",")
+
+            if args.timestamp:
+                try:
+                    timestamp = parser.parse(args.timestamp)
+                    timestamp = int(timestamp.timestamp())
+                except Exception as e:
+                    print("invalid timestamp: %s" % str(e))
+                    sys.exit()
+            else:
+                timestamp = None
+
+            result = emailrep.report(email, tags, args.description, timestamp, args.expires)
+            if result.get("status") and result["status"] == "success":
+                print("Successfully reported %s" % email)
+            else:
+                print("Failed to report %s. Reason: %s" % (email, result["reason"]))
+
+    except Exception as e:
         print(e)
 
 if __name__ == "__main__":

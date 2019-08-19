@@ -4,3 +4,4 @@ emailrep.egg-info
 venv
 requirements.txt
 __pycache__
+*.swp
