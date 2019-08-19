@@ -10,7 +10,7 @@ install_requires = [
 
 setuptools.setup(
     name="emailrep",
-    version="0.0.2",
+    version="0.0.3",
     author="Sublime Security",
     author_email="hi@sublimesecurity.com",
     description="Python interface for the EmailRep API",
