@@ -17,7 +17,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://emailrep.io",
-    download_url="https://github.com/sublime-security/python-emailrep.io",
+    download_url="https://github.com/sublime-security/emailrep.io-python",
     packages=setuptools.find_packages(),
     install_requires=install_requires,
     classifiers=[
