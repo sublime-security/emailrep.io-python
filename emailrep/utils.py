@@ -17,13 +17,6 @@ def parse_args():
             description="""
 EmailRep - emailrep.io command line interface
 
- _____                 _ _ ____
-| ____|_ __ ___   __ _(_) |  _ \ ___ _ __
-|  _| | '_ ` _ \ / _` | | | |_) / _ \ '_ \\
-| |___| | | | | | (_| | | |  _ <  __/ |_) |
-|_____|_| |_| |_|\__,_|_|_|_| \_\___| .__/
-                                    |_|
-
 Query an email address:
 --------------------
 emailrep foo@bar.com

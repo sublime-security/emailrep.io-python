@@ -14,6 +14,14 @@ class EmailRep():
         self.headers["Content-Type"] = "application/json"
         if key:
             self.headers["Key"] = key
+        self.banner = """
+   ____           _ _____
+  / __/_ _  ___ _(_) / _ \___ ___
+ / _//  ' \/ _ `/ / / , _/ -_) _ \\
+/___/_/_/_/\_,_/_/_/_/|_|\__/ .__/
+                           /_/
+"""
+
 
     def query(self, email):
         result = requests.get("%s/%s?summary=true" % (self.base_url, email), headers=self.headers)
@@ -38,6 +46,7 @@ class EmailRep():
         return result.json()
 
     def format_query_output(self, result):
+        print(self.banner)
         print("Email address: %s\n" % result["email"])
         print("\033[91mRISKY\033[0m\n") if result["suspicious"] else None
         print(result["summary"])
