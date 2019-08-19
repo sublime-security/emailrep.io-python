@@ -1,0 +1,6 @@
+build
+dist
+emailrep.egg-info
+venv
+requirements.txt
+__pycache__
