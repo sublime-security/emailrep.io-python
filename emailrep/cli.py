@@ -1,14 +1,17 @@
 import sys
 from dateutil import parser
 
-from emailrep.utils import parse_args, setup, load_config
+from emailrep.utils import parse_args, load_config
 from emailrep import EmailRep
 
 def main():
-    action, args = parse_args()
+    (action, args, proxy) = parse_args()
     config = load_config()
 
-    emailrep = EmailRep(config.get('emailrep', 'key'))
+    emailrep = EmailRep(
+            key=config.get('emailrep', 'key'), 
+            proxy=proxy)
+
     try:
         if action == EmailRep.QUERY:
             result = emailrep.query(args.query)
