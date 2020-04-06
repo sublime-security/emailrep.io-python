@@ -3,7 +3,7 @@
 This is a python 3 library and cli module for interacting with the [EmailRep](https://emailrep.io) service.
 
 ## Installation
-`pip3 install emailrep`
+`pip3 install emailrep --upgrade`
 
 ## Quick Start (cli)
 ```sh
@@ -33,4 +33,4 @@ emailrep.report("foo@bar.com", ["bec", "maldoc"], "Phishing email targeting CEO"
 
 ```
 
-Full API docs can be found [here](https://emailrep.io/docs).
+Full API docs can be found [here](https://docs.emailrep.io).
