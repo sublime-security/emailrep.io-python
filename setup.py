@@ -5,12 +5,13 @@ with open("README.md", "r") as fh:
 
 install_requires = [
     "python-dateutil",
-    "requests"
+    "requests",
+    "PySocks"
 ]
 
 setuptools.setup(
     name="emailrep",
-    version="0.0.3",
+    version="0.0.4",
     author="Sublime Security",
     author_email="hi@sublimesecurity.com",
     description="Python interface for the EmailRep API",

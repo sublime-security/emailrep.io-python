@@ -10,7 +10,7 @@ class EmailRep():
     def __init__(self, key=None, proxy=None):
         self.base_url = BASE_URL
         self.headers = {}
-        self.version = "0.0.3"
+        self.version = "0.0.4"
         self.headers["User-Agent"] = "python/emailrep.io v%s" % self.version
         self.headers["Content-Type"] = "application/json"
 
