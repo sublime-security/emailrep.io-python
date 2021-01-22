@@ -1,7 +1,7 @@
-import sys
 import requests
 
 BASE_URL = "https://emailrep.io"
+
 
 class EmailRep():
     QUERY = "QUERY"
@@ -10,7 +10,7 @@ class EmailRep():
     def __init__(self, key=None, proxy=None):
         self.base_url = BASE_URL
         self.headers = {}
-        self.version = "0.0.4"
+        self.version = "0.0.5"
         self.headers["User-Agent"] = "python/emailrep.io v%s" % self.version
         self.headers["Content-Type"] = "application/json"
 
@@ -27,7 +27,6 @@ class EmailRep():
 /___/_/_/_/\_,_/_/_/_/|_|\__/ .__/
                            /_/
 """
-
 
     def query(self, email):
         url = "{}/{}?summary=true".format(self.base_url, email)
@@ -58,4 +57,3 @@ class EmailRep():
         print("Email address: %s\n" % result["email"])
         print("\033[91mRISKY\033[0m\n") if result["suspicious"] else None
         print(result["summary"])
-

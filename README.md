@@ -3,7 +3,7 @@
 This is a python 3 library and cli module for interacting with the [EmailRep](https://emailrep.io) service.
 
 ## Installation
-`pip3 install emailrep --upgrade`
+`pip3 install emailrep --upgrade` or `python3 -m pip install --upgrade emailrep`
 
 ## Quick Start (cli)
 ```sh

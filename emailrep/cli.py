@@ -4,13 +4,14 @@ from dateutil import parser
 from emailrep.utils import parse_args, load_config
 from emailrep import EmailRep
 
+
 def main():
     (action, args, proxy) = parse_args()
     config = load_config()
 
     emailrep = EmailRep(
-            key=config.get('emailrep', 'key'), 
-            proxy=proxy)
+        key=config.get('emailrep', 'key'),
+        proxy=proxy)
 
     try:
         if action == EmailRep.QUERY:
